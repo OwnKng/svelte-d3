@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--colors-background: #18181b;
+	--colors-foreground: #242429;
+	--colors-text: #d4d4d8;
+	--colors-axis: #d4d4d8;
+	--colors-grid: #3f3f46;
+	--colors-primary: #34d399;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+}
+
+.Axis line {
+	stroke: var(--colors-text);
+}
+
+.Grid line {
+	stroke: var(--colors-grid);
+}
+
+.Axis text {
+	fill: var(--colors-text);
+	stroke: var(--colors-background);
+	paint-order: stroke;
+	font-size: 12px;
+}
+
+.Chart text {
+	font-family: 'Source Code Pro', monospace;
+}
+
+.Panel rect {
+	fill: var(--colors-foreground);
+}
+
+.Panel line {
+	stroke: var(--colors-grid);
+}

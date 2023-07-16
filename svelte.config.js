@@ -1,0 +1,16 @@
+import adapter from '@sveltejs/adapter-auto';
+import { vitePreprocess } from '@sveltejs/kit/vite';
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	kit: {
+		adapter: adapter(),
+		alias: {
+			'@components': 'src/components',
+			'@visualisations': 'src/visualisations',
+			'@utils': 'src/utils',
+			'@data': 'src/data'
+		}
+	},
+	preprocess: vitePreprocess()
+};
+export default config;
