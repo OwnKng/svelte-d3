@@ -1,16 +1,20 @@
 const url = 'https://api.worldbank.org/v2/country';
 
-const getNumberOfPages = async (url: string) =>
+const getNumberOfPages = async (fetch: typeof globalThis.fetch, url: string) =>
 	await fetch(url)
 		.then((res) => res.json())
 		.then(([{ pages }]) => pages);
 
-export const getWbData = async (countries = ['WLD'], code = 'SI.POV.DDAY') => {
+export const getWbData = async (
+	fetch: typeof globalThis.fetch,
+	countries = ['WLD'],
+	code = 'SI.POV.DDAY'
+) => {
 	const countryCodes = countries.length === 1 ? countries[0] : countries.join(';');
 
 	const indicatorUrl = `${url}/${countryCodes}/indicator/${code}/?format=json&per_page=100`;
 
-	const numberOfPages = await getNumberOfPages(indicatorUrl);
+	const numberOfPages = await getNumberOfPages(fetch, indicatorUrl);
 
 	const data = await Promise.all(
 		new Array(numberOfPages).fill(0).map((_, i) =>

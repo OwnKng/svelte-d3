@@ -4,10 +4,6 @@
 	import { formatPercent } from '../../utils';
 
 	let data = createDummyData(200);
-
-	const getX = (d: any) => d['x'];
-	const getY = (d: any) => d['y'];
-	const getColor = (d: any) => d['color'];
 </script>
 
 <h2 class="text-3xl font-bold mb-8">Scatterplot</h2>
@@ -18,5 +14,5 @@
 >
 
 <div class="w-full h-[500px] my-4">
-	<ScatterPlot {data} {getX} {getY} {getColor} xFormat={formatPercent} yFormat={formatPercent} />
+	<ScatterPlot {data} x="x" y="y" color="color" xFormat={formatPercent} yFormat={formatPercent} />
 </div>

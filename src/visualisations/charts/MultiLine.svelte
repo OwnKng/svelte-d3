@@ -73,10 +73,12 @@
 </script>
 
 <div class="w-full h-full flex flex-col">
-	<div>
-		<LegendOrdinal scale={colorScale} />
-	</div>
-	<div class="relative w-full h-full" bind:clientWidth={width} bind:clientHeight={height}>
+	<LegendOrdinal scale={colorScale} />
+	<div
+		class="w-full h-full relative overflow-x-hidden md:overflow-x-auto"
+		bind:clientWidth={width}
+		bind:clientHeight={height}
+	>
 		{#if width > 100}
 			<Chart {dimensions}>
 				<Grid orientation="y" scale={yScale} />

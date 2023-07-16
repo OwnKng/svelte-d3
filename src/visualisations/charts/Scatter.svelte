@@ -5,7 +5,6 @@
 	import Chart from '../primatives/Chart.svelte';
 	import Circle from '../primatives/Circle.svelte';
 	import Axis from '../helpers/Axis.svelte';
-
 	import Tooltip from '../helpers/Tooltip.svelte';
 	import LegendOrdinal from '../helpers/LegendOrdinal.svelte';
 	import { Delaunay } from 'd3-delaunay';
@@ -17,14 +16,13 @@
 	export let width = 0;
 	export let height = 0;
 
-	export let data: any[];
-	export let getY = (d: any) => d.y;
-	export let getX = (d: any) => d.x;
-	export let getColor = (d: any) => d.color;
-	export let getRadius = (d: any) => 10;
-	export let xFormat = (x: number | string) => format(',')(x);
-	export let yFormat = (y: number | string) => format(',')(y);
+	export let x: string;
+	export let y: string;
+	export let color: string;
 
+	export let data: any[];
+	export let xFormat = (x: number) => format(',')(x);
+	export let yFormat = (y: number) => format(',')(y);
 	export let colors = colorPalette;
 
 	// dimensions
@@ -35,6 +33,11 @@
 		innerHeight: Math.max(height - margins.top - margins.bottom, 0),
 		innerWidth: Math.max(width - margins.left - margins.right, 0)
 	};
+
+	//_ Accessors
+	$: getY = (d: any) => d[y];
+	$: getX = (d: any) => d[x];
+	$: getColor = (d: any) => d[color];
 
 	//_ scales
 	$: xScale = scaleLinear().domain(extent(data, getX)).range([0, dimensions.innerWidth]).nice();
@@ -84,7 +87,7 @@
 					<Circle
 						x={getXScaled(datum)}
 						y={getYScaled(datum)}
-						radius={getRadius(datum)}
+						radius={10}
 						fill={getColorScaled(datum)}
 						stroke={tooltipData && tooltipData === datum ? 'white' : 'transparent'}
 					/>

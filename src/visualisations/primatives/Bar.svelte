@@ -4,21 +4,22 @@
 	export let width = 0;
 	export let height = 0;
 	export let fill = 'black';
-	export let styles = '';
+	export let style = '';
 
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import { onMount } from 'svelte';
 </script>
 
-	<rect
-		class="Bar"
-		transition:slide={{ delay: 100, duration: 500, easing: quintOut, axis: 'y' }}
-		{x}
-		{y}
-		{height}
-		{width}
-		{fill}
-		style={styles}
-	/>
-
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<rect
+	class="Bar"
+	transition:slide={{ delay: 100, duration: 500, easing: quintOut, axis: 'y' }}
+	{x}
+	{y}
+	{height}
+	{width}
+	{fill}
+	{style}
+	on:mousemove
+	on:mouseleave
+/>

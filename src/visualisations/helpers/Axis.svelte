@@ -8,11 +8,18 @@
 	export let tickLength = 10;
 	export let numberOfTicks = 4;
 	export let hideAxisLine = false;
+	export let hideTicks = false;
+	export let tickValues: any[] = [];
 
+	//@ts-ignore
 	const { dimensions: dimensionsStore } = getContext('Chart');
 	$: dimensions = $dimensionsStore;
 
-	$: ticks = scale.ticks(numberOfTicks);
+	$: ticks = tickValues.length
+		? tickValues
+		: scale.ticks
+		? scale.ticks(numberOfTicks)
+		: scale.domain();
 </script>
 
 <g
@@ -26,6 +33,7 @@
 			y2={orientation == 'y' ? dimensions.innerHeight : 0}
 		/>
 	{/if}
+
 	{#each ticks as tick, i}
 		<g
 			transform={`translate(${(orientation == 'x' ? [scale(tick), 0] : [0, scale(tick)]).join(
@@ -41,9 +49,12 @@
 			>
 				{formatTick(tick)}
 			</text>
-			<line x2={orientation == 'x' ? 0 : -tickLength} y2={orientation == 'y' ? 0 : tickLength} />
+			{#if !hideTicks}
+				<line x2={orientation == 'x' ? 0 : -tickLength} y2={orientation == 'y' ? 0 : tickLength} />
+			{/if}
 		</g>
 	{/each}
+
 	{#if label}
 		<text
 			class="Axis__label"

@@ -21,8 +21,8 @@
 	<figure class="w-full h-graph">
 		<LineChart
 			data={value.series}
-			getX={(d) => d.date}
-			getY={(d) => d.value}
+			x="date"
+			y="value"
 			filled={true}
 			yFormat={(y) => formatPercent(y, 0, 0.01)}
 			xFormat={(x) => x}

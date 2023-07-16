@@ -12,11 +12,11 @@
 
 <div class="w-full h-full min-h-screen bg-zinc-900 text-zinc-200">
 	<div class="w-full max-w-content mx-auto">
-		<header class="mb-12 pt-4">
-			<anchor class="text-3xl text-zinc-50 font-bold">Svelte Viz</anchor>
+		<header class="mb-12 pt-4 px-2 md:px-0">
+			<a href="/" class="text-3xl text-zinc-50 font-bold">Svelte Viz</a>
 			<p>A set of example graphs built with D3 and Svelte</p>
 		</header>
-		<div class="w-full grid grid-cols-4">
+		<div class="w-full flex flex-col gap-8 md:gap-2 md:grid md:grid-cols-4 px-2 md:px-0">
 			<nav class="col-span-1">
 				<p class="font-bold text-emerald-400">Examples</p>
 				<ul class="flex flex-col gap-2 py-2">

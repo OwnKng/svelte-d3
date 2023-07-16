@@ -13,8 +13,9 @@
 	import Tooltip from '@visualisations/helpers/Tooltip.svelte';
 
 	export let data: any[];
-	export let getX = (d: any) => d['x'];
-	export let getY = (d: any) => d['y'];
+	export let x: string;
+	export let y: string;
+
 	export let filled = false;
 	export let color = colorPalette[0];
 
@@ -25,6 +26,7 @@
 	export let xFormat = (d: any) => format('.2s')(d);
 	export let yFormat = (d: any) => format('.2s')(d);
 
+	//_ dimensions
 	$: dimensions = {
 		width,
 		height,
@@ -32,6 +34,10 @@
 		innerHeight: Math.max(height - margins.top - margins.bottom, 0),
 		innerWidth: Math.max(width - margins.left - margins.right, 0)
 	};
+
+	//_ accessors
+	$: getX = (d: any) => d[x];
+	$: getY = (d: any) => d[y];
 
 	//_ scales
 	$: xScale = scaleLinear()
@@ -63,7 +69,7 @@
 		data: null
 	};
 
-	const bisect = bisector(getX).left;
+	$: bisect = bisector(getX).left;
 
 	$: handleMouseOver = (event: MouseEvent) => {
 		const xInverted = xScale.invert(event.offsetX - margins.left);
