@@ -23,3 +23,9 @@
 	on:mousemove
 	on:mouseleave
 />
+
+<style>
+	.Bar {
+		transition: all 0.5s ease;
+	}
+</style>

@@ -9,7 +9,6 @@
 	import { curveMonotoneX, area, line } from 'd3-shape';
 	import { colorPalette } from '../util';
 	import Grid from '@visualisations/helpers/Grid.svelte';
-	import { format } from 'd3-format';
 	import Tooltip from '@visualisations/helpers/Tooltip.svelte';
 
 	export let data: any[];
@@ -22,9 +21,11 @@
 	export let margins = DEFAULT_MARGIN;
 	export let width = 0;
 	export let height = 0;
+	export let yMax: number | null = null;
+	export let yMin: number | null = null;
 
-	export let xFormat = (d: any) => format('.2s')(d);
-	export let yFormat = (d: any) => format('.2s')(d);
+	export let xFormat = (d: any) => d;
+	export let yFormat = (d: any) => d;
 
 	//_ dimensions
 	$: dimensions = {
@@ -46,7 +47,7 @@
 		.clamp(true);
 
 	$: yScale = scaleLinear()
-		.domain([filled ? 0 : min(data, getY), max(data, getY)])
+		.domain([filled ? 0 : yMin ? yMin : min(data, getY), yMax ? yMax : max(data, getY)])
 		.range([dimensions.innerHeight, 0])
 		.nice();
 
@@ -95,8 +96,14 @@
 				<Area path={areaPath} {color} />
 			{/if}
 			<Line {path} {color} />
-			<Axis orientation="x" scale={xScale} numberOfTicks={8} formatTick={xFormat} />
-			<Axis orientation="y" scale={yScale} formatTick={yFormat} />
+			<Axis orientation="x" scale={xScale} numberOfTicks={3} formatTick={xFormat} />
+			<Axis
+				orientation="y"
+				scale={yScale}
+				formatTick={yFormat}
+				hideAxisLine={true}
+				hideTicks={true}
+			/>
 			{#if tooltip.data}
 				<circle
 					cx={getXScaled(tooltip.data)}

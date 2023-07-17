@@ -35,5 +35,10 @@
 				class="underline text-emerald-400">Tailwind</a
 			> for some styling.
 		</p>
+
+		<p class="mt-4">
+			Enjoy, <br />
+			<span class="text-emerald-400 text-lg font-bold">Owen King</span>.
+		</p>
 	</div>
 </div>

@@ -58,8 +58,8 @@
 		const yMax = max(highlighted, getY);
 
 		tooltip.data = highlighted;
-		tooltip.left = xScale(getX(datum)) + margins.left;
-		tooltip.top = yScale(yMax) - 50;
+		tooltip.left = xScale(getX(datum));
+		tooltip.top = yScale(yMax);
 	};
 
 	$: handleMouseLeave = () => {
@@ -74,11 +74,7 @@
 
 <div class="w-full h-full flex flex-col">
 	<LegendOrdinal scale={colorScale} />
-	<div
-		class="w-full h-full relative overflow-x-hidden md:overflow-x-auto"
-		bind:clientWidth={width}
-		bind:clientHeight={height}
-	>
+	<div class="w-full h-full relative" bind:clientWidth={width} bind:clientHeight={height}>
 		{#if width > 100}
 			<Chart {dimensions}>
 				<Grid orientation="y" scale={yScale} />
@@ -95,6 +91,13 @@
 							class="stroke-slate-900"
 						/>
 					{/each}
+					<line
+						x1={tooltip.left}
+						x2={tooltip.left}
+						y1={0}
+						y2={dimensions.innerHeight}
+						stroke="var(--colors-grid)"
+					/>
 				{/if}
 				<Axis orientation="x" scale={xScale} formatTick={xFormat} />
 				<Axis orientation="y" scale={yScale} formatTick={yFormat} />
