@@ -13,6 +13,7 @@
 <svelte:head>
 	<title>Svelte Viz</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="A set of example graphs built with Svelte and D3" />
 	<link rel="icon" type="image/png" href="/favicon.png" />
 </svelte:head>
 
