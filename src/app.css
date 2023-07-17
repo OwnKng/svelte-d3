@@ -42,3 +42,8 @@ body {
 .Panel line {
 	stroke: var(--colors-grid);
 }
+
+::selection {
+	background: var(--colors-primary);
+	color: var(--colors-background);
+}
