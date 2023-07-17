@@ -75,7 +75,7 @@
 				<slot />
 			</main>
 		</div>
-		<footer class="mt-12 text-sm text-gray-500 px-2 md:px-0 pb-4">
+		<footer class="mt-12 text-sm text-zinc-300 px-2 md:px-0 pb-4">
 			<p>Made by <a class="underline text-emerald-400" href="https://ownkng.dev">Owen King</a></p>
 		</footer>
 	</div>
