@@ -24,52 +24,95 @@
 			<p>A set of example graphs built with Svelte and D3</p>
 		</header>
 		<div class="w-full flex flex-col gap-8 md:gap-2 md:grid md:grid-cols-4 px-2 md:px-0">
-			<nav class="col-span-1">
-				<p class="font-bold text-emerald-400">Primatives</p>
-				<p class="font-bold text-emerald-400">Charts</p>
-				<ul class="flex flex-col gap-2 py-2">
-					<li>
-						<a
-							class={`${
-								active === '/scatterplot' ? 'text-emerald-400' : 'text-zinc-300 underline'
-							}`}
-							href="/scatterplot">Scatter</a
-						>
-					</li>
-					<li>
-						<a
-							class={`${active === '/bar' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
-							href="/bar">Bars</a
-						>
-					</li>
-					<li>
-						<a
-							class={`${active === '/stackedbar' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
-							href="/stackedbar">Stacked bars</a
-						>
-					</li>
-					<li>
-						<a
-							class={`${active === '/linechart' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
-							href="/linechart">Line</a
-						>
-					</li>
-					<li>
-						<a
-							class={`${active === '/multiline' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
-							href="/multiline">Multiline</a
-						>
-					</li>
-				</ul>
-				<p class="font-bold text-emerald-400">Helpers</p>
-				<ul>
-					<li>
-						<a
-							class={`${active === '/facet' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
-							href="/facet">Facet</a
-						>
-					</li>
-				</ul>
+			<nav class="col-span-1 flex flex-col gap-3">
+				<div>
+					<p class="font-bold text-emerald-400">Primatives</p>
+					<ul>
+						<li>
+							<a
+								class={`${active === '/circle' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
+								href="/circle">Circle</a
+							>
+						</li>
+						<li>
+							<a
+								class={`${active === '/bar' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
+								href="/bar">Bar</a
+							>
+						</li>
+						<li>
+							<a
+								class={`${active === '/line' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
+								href="/line">Line</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p class="font-bold text-emerald-400">Charts</p>
+					<ul class="flex flex-col gap-2 py-2">
+						<li>
+							<a
+								class={`${
+									active === '/scatterplot' ? 'text-emerald-400' : 'text-zinc-300 underline'
+								}`}
+								href="/scatterplot">Scatter</a
+							>
+						</li>
+						<li>
+							<a
+								class={`${active === '/bars' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
+								href="/bars">Bars</a
+							>
+						</li>
+						<li>
+							<a
+								class={`${
+									active === '/stackedbar' ? 'text-emerald-400' : 'text-zinc-300 underline'
+								}`}
+								href="/stackedbar">Stacked bars</a
+							>
+						</li>
+						<li>
+							<a
+								class={`${
+									active === '/linechart' ? 'text-emerald-400' : 'text-zinc-300 underline'
+								}`}
+								href="/linechart">Line</a
+							>
+						</li>
+						<li>
+							<a
+								class={`${
+									active === '/multiline' ? 'text-emerald-400' : 'text-zinc-300 underline'
+								}`}
+								href="/multiline">Multiline</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p class="font-bold text-emerald-400">Helpers</p>
+					<ul>
+						<li>
+							<a
+								class={`${active === '/tooltip' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
+								href="/tooltip">Tooltips</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p class="font-bold text-emerald-400">Misc</p>
+					<ul>
+						<li>
+							<a
+								class={`${active === '/facet' ? 'text-emerald-400' : 'text-zinc-300 underline'}`}
+								href="/facet">Facet</a
+							>
+						</li>
+					</ul>
+				</div>
 			</nav>
 			<main class="col-span-3">
 				<slot />

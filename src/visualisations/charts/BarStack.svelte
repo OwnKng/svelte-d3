@@ -14,6 +14,7 @@
 	import Tooltip from '@visualisations/helpers/Tooltip.svelte';
 
 	import type { TooltipData } from '../types';
+	import TooltipWithBounds from '@visualisations/helpers/TooltipWithBounds.svelte';
 
 	export let margins = DEFAULT_MARGIN;
 	export let width = 0;
@@ -99,11 +100,7 @@
 
 <div class="w-full h-full flex flex-col">
 	<LegendOrdinal scale={colorScale} symbol="square" />
-	<div
-		class="w-full h-full relative overflow-x-hidden md:overflow-x-auto"
-		bind:clientWidth={width}
-		bind:clientHeight={height}
-	>
+	<div class="w-full h-full relative" bind:clientWidth={width} bind:clientHeight={height}>
 		{#if width > 100}
 			<Chart {dimensions}>
 				<GridRows scale={yScale} />
@@ -143,7 +140,12 @@
 				{/if}
 			</Chart>
 			{#if tooltip.data}
-				<Tooltip left={tooltip.left} top={tooltip.top}>
+				<TooltipWithBounds
+					left={tooltip.left}
+					top={tooltip.top}
+					parentDimensions={dimensions}
+					offsetY={50}
+				>
 					<span class="font-bold">{getX(tooltip.data[0])}</span>
 					<div class="divide-y px-1">
 						{#each tooltip.data as row}
@@ -159,7 +161,7 @@
 							</div>
 						{/each}
 					</div>
-				</Tooltip>
+				</TooltipWithBounds>
 			{/if}
 		{/if}
 	</div>

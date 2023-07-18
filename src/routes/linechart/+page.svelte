@@ -8,7 +8,7 @@
 	export let data: PageData;
 </script>
 
-<h2 class="text-3xl font-bold mb-8">Line</h2>
+<h1 class="text-3xl font-bold mb-8">Line</h1>
 
 {#await data.streamed.data}
 	<div class="w-full h-graph rounded">

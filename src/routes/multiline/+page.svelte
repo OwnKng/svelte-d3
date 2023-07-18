@@ -11,7 +11,7 @@
 	const getColor = (d: any) => d.country;
 </script>
 
-<h2 class="text-3xl font-bold mb-8">Multiple lines</h2>
+<h1 class="text-3xl font-bold mb-8">Multiple lines</h1>
 
 <h3 class="text-lg font-bold mb-2">
 	{data.indicator}

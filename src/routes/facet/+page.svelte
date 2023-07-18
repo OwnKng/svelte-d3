@@ -7,9 +7,9 @@
 	import { formatPercent } from '@utils';
 </script>
 
-<h2 class="text-3xl font-bold mb-8">
+<h1 class="text-3xl font-bold mb-8">
 	Facets <span class="text-xl text-gray-500">/ small multiples</span>
-</h2>
+</h1>
 
 {#await data.streamed.data}
 	<div class="w-full h-graph rounded">

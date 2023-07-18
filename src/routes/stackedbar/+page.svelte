@@ -4,7 +4,7 @@
 	import { format } from 'd3-format';
 </script>
 
-<h2 class="text-3xl font-bold mb-8">Stacked Bar</h2>
+<h1 class="text-3xl font-bold mb-8">Stacked Bar</h1>
 
 <h3 class="text-lg font-bold mb-2">
 	{data.indicator}

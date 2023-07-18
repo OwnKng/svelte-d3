@@ -6,7 +6,7 @@
 	let data = createDummyData(200);
 </script>
 
-<h2 class="text-3xl font-bold mb-8">Scatterplot</h2>
+<h1 class="text-3xl font-bold mb-8">Scatterplot</h1>
 
 <button
 	class="px-4 py-2 border bg-emerald-400 border-emerald-600 text-zinc-900 rounded-full hover:bg-emerald-500 hover:border-emerald-700 transition"
