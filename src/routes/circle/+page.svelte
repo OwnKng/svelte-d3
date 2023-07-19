@@ -27,7 +27,7 @@
 
 	$: xScale = scaleLinear().domain([0, 10]).range([0, dimensions.innerWidth]);
 	$: yScale = scaleLinear().domain([0, 10]).range([0, dimensions.innerHeight]);
-	$: rScale = scaleSqrt().domain([0, 10]).range([0, 40]);
+	$: rScale = scaleSqrt().domain([0, 10]).range([0, 20]);
 	$: colorScale = scaleLinear().domain([0, 10]).range(['#34d399', '#22d3ee']);
 </script>
 

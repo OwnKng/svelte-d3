@@ -4,6 +4,7 @@
 	import '@fontsource/source-code-pro';
 
 	import '../app.css';
+	import '../styles/code.css';
 
 	import { page } from '$app/stores';
 
@@ -50,7 +51,7 @@
 				</div>
 				<div>
 					<p class="font-bold text-emerald-400">Charts</p>
-					<ul class="flex flex-col gap-2 py-2">
+					<ul>
 						<li>
 							<a
 								class={`${

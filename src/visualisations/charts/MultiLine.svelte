@@ -10,6 +10,7 @@
 	import type { TooltipData } from '../types';
 	import { line } from 'd3-shape';
 	import LegendOrdinal from '../helpers/LegendOrdinal.svelte';
+	import { curveMonotoneX } from 'd3-shape';
 
 	export let data: any[];
 	export let getX = (d: any) => d['x'];
@@ -69,7 +70,8 @@
 	$: lineGenerator = (d: any) =>
 		line()
 			.x((d) => xScale(getX(d)))
-			.y((d) => yScale(getY(d)))(d) as string;
+			.y((d) => yScale(getY(d)))
+			.curve(curveMonotoneX)(d) as string;
 </script>
 
 <div class="w-full h-full flex flex-col">
@@ -82,6 +84,13 @@
 					<Line path={lineGenerator(grouped.get(group))} color={colorScale(group)} />
 				{/each}
 				{#if tooltip.data}
+					<line
+						x1={tooltip.left}
+						x2={tooltip.left}
+						y1={dimensions.innerHeight}
+						y2={tooltip.top}
+						stroke="var(--colors-grid)"
+					/>
 					{#each tooltip.data as row}
 						<circle
 							cx={xScale(getX(row))}
@@ -91,13 +100,6 @@
 							class="stroke-slate-900"
 						/>
 					{/each}
-					<line
-						x1={tooltip.left}
-						x2={tooltip.left}
-						y1={0}
-						y2={dimensions.innerHeight}
-						stroke="var(--colors-grid)"
-					/>
 				{/if}
 				<Axis orientation="x" scale={xScale} formatTick={xFormat} />
 				<Axis orientation="y" scale={yScale} formatTick={yFormat} />

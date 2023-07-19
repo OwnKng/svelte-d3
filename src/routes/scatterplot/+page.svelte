@@ -3,6 +3,8 @@
 	import { createDummyData } from '../../utils';
 	import { formatPercent } from '../../utils';
 
+	import post from './post.md';
+
 	let data = createDummyData(200);
 </script>
 
@@ -15,4 +17,7 @@
 
 <div class="w-full h-[500px] my-4">
 	<ScatterPlot {data} x="x" y="y" color="color" xFormat={formatPercent} yFormat={formatPercent} />
+</div>
+<div class="mt-8">
+	<svelte:component this={post} />
 </div>

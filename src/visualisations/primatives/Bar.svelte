@@ -26,6 +26,6 @@
 
 <style>
 	.Bar {
-		transition: all 0.5s ease;
+		transition: y 0.5s ease;
 	}
 </style>
