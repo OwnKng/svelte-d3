@@ -2,12 +2,10 @@
 	import MultiLine from '@visualisations/charts/MultiLine.svelte';
 	import { format } from 'd3-format';
 	import Skeleton from '@components/Skeleton.svelte';
+	import type { PageData } from './$types';
+	import Error from '@components/Error.svelte';
 
-	export let data: any = [];
-
-	const getX = (d: any) => d.date;
-	const getY = (d: any) => d.value;
-	const getColor = (d: any) => d.country;
+	export let data: PageData;
 </script>
 
 <h1 class="text-3xl font-bold mb-8">Multiple lines</h1>
@@ -23,13 +21,15 @@
 	<figure class="w-full h-graph">
 		<MultiLine
 			data={value.series.filter((d) => d.value !== null).sort((a, b) => a.date - b.date)}
-			{getX}
-			{getY}
-			{getColor}
+			x="date"
+			y="value"
+			color="country"
 			xFormat={(d) => d}
 			yFormat={(d) => format('$.2s')(d)}
 		/>
 	</figure>
+{:catch error}
+	<Error />
 {/await}
 
 <span class="text-sm text-gray-500">Source: World Bank</span>

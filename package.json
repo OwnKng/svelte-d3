@@ -21,7 +21,6 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
-	
 		"postcss": "^8.4.26",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
@@ -41,7 +40,8 @@
 		"d3-format": "^3.1.0",
 		"d3-scale": "^4.0.2",
 		"d3-shape": "^3.2.0",
-		"shiki": "^0.14.3",
-		"mdsvex": "^0.11.0"
+		"mdsvex": "^0.11.0",
+		"pretty-cache-header": "^1.0.0",
+		"shiki": "^0.14.3"
 	}
 }

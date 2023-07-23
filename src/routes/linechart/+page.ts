@@ -1,4 +1,3 @@
-import { getWbData } from '@utils/wb';
 import type { PageLoad } from './$types';
 import { getMarkdownForComponent } from '@utils/markdown';
 
@@ -7,7 +6,13 @@ export const load = (async ({ fetch }) => {
 	return {
 		content: markdown,
 		streamed: {
-			data: getWbData(fetch, ['WLD'], 'SI.POV.DDAY')
+			data: fetch('/api', {
+				method: 'POST',
+				body: JSON.stringify({
+					countryCodes: ['WLD'],
+					code: 'SI.POV.DDAY'
+				})
+			}).then((res) => res.json())
 		}
 	};
 }) satisfies PageLoad;

@@ -4,11 +4,17 @@ import { getMarkdownForComponent } from '@utils/markdown';
 
 export const load = (async ({ fetch }) => {
 	const markdown = getMarkdownForComponent('stacks');
-	const { indicator, series } = await getWbData(fetch, ['CHN;IND;USA'], 'SP.POP.TOTL');
 
 	return {
 		content: markdown,
-		indicator,
-		series: series
+		streamed: {
+			data: fetch('/api', {
+				method: 'POST',
+				body: JSON.stringify({
+					countryCodes: ['CHN', 'IND', 'USA'],
+					code: 'SP.POP.TOTL'
+				})
+			}).then((res) => res.json())
+		}
 	};
 }) satisfies PageLoad;

@@ -2,26 +2,34 @@
 	import BarStack from '@visualisations/charts/BarStack.svelte';
 	export let data;
 	import { format } from 'd3-format';
+	import Skeleton from '@components/Skeleton.svelte';
+	import Error from '@components/Error.svelte';
 </script>
 
 <h1 class="text-3xl font-bold mb-8">Stacked Bar</h1>
 
-<h3 class="text-lg font-bold mb-2">
-	{data.indicator}
-</h3>
-
-<div class="mb-4">
+{#await data.streamed.data}
+	<div class="w-full h-graph rounded">
+		<Skeleton />
+	</div>
+{:then value}
+	<h3 class="text-lg font-bold mb-2">
+		{value.indicator}
+	</h3>
 	<figure class="w-full h-graph">
 		<BarStack
-			data={data.series}
+			data={value.series}
 			x="date"
 			y="value"
 			color="country"
-			yFormat={(y) => format('.2s')(y)}
+			xFormat={(d) => d}
+			yFormat={(d) => format('$.2s')(d)}
 		/>
 	</figure>
 	<span class="text-sm text-gray-500">Source: World Bank</span>
-</div>
+{:catch error}
+	<Error />
+{/await}
 
 <h2>Code</h2>
 <svelte:component this={data.content} />

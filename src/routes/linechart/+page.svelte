@@ -2,6 +2,7 @@
 	import Skeleton from '@components/Skeleton.svelte';
 	import type { PageData } from './$types';
 	import { formatPercent } from '@utils';
+	import Error from '@components/Error.svelte';
 
 	import LineChart from '@visualisations/charts/LineChart.svelte';
 
@@ -30,7 +31,7 @@
 	</figure>
 	<span class="text-sm text-gray-500">Source: World Bank</span>
 {:catch error}
-	<p>{error.message}</p>
+	<Error />
 {/await}
 <h2>Code</h2>
 <svelte:component this={data.content} />

@@ -13,9 +13,13 @@
 	import { curveMonotoneX } from 'd3-shape';
 
 	export let data: any[];
-	export let getX = (d: any) => d['x'];
-	export let getY = (d: any) => d['y'];
-	export let getColor = (d: any) => d['group'];
+	export let x: string;
+	export let y: string;
+	export let color: string;
+
+	let getX = (d: any) => d[x];
+	let getY = (d: any) => d[y];
+	let getColor = (d: any) => d[color];
 	export let xFormat = (d: any) => d;
 	export let yFormat = (d: any) => d;
 
@@ -39,6 +43,12 @@
 		.clamp(true);
 	$: yScale = scaleLinear().domain(extent(data, getY)).range([dimensions.innerHeight, 0]).nice();
 	$: colorScale = scaleOrdinal().domain(grouped.keys()).range(colorPalette);
+
+	$: lineGenerator = (d: any) =>
+		line()
+			.x((d) => xScale(getX(d)))
+			.y((d) => yScale(getY(d)))
+			.curve(curveMonotoneX)(d) as string;
 
 	// Tooltips
 	$: tooltip = {
@@ -66,12 +76,6 @@
 	$: handleMouseLeave = () => {
 		tooltip.data = null;
 	};
-
-	$: lineGenerator = (d: any) =>
-		line()
-			.x((d) => xScale(getX(d)))
-			.y((d) => yScale(getY(d)))
-			.curve(curveMonotoneX)(d) as string;
 </script>
 
 <div class="w-full h-full flex flex-col">
