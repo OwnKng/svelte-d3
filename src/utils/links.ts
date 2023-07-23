@@ -25,7 +25,7 @@ export const links = [
 			},
 			{
 				label: 'Line',
-				href: '/line'
+				href: '/linechart'
 			},
 			{
 				label: 'Bars',
