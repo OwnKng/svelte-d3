@@ -29,7 +29,8 @@
 				<p>A set of example graphs built with Svelte and D3</p>
 			</div>
 			<div>
-				<a href="" class="h-fit">
+				<a href="https://github.com/OwnKng/svelteviz" class="h-fit">
+					<span class="sr-only">Github repo</span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="32"

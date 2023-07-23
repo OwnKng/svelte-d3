@@ -45,6 +45,10 @@ export const links = [
 		title: 'Helpers',
 		links: [
 			{
+				label: 'Chart',
+				href: '/chart'
+			},
+			{
 				label: 'Axis',
 				href: '/axis'
 			},
