@@ -53,8 +53,16 @@ export const links = [
 				href: '/axis'
 			},
 			{
+				label: 'Group',
+				href: '/group'
+			},
+			{
 				label: 'Grid',
 				href: '/grid'
+			},
+			{
+				label: 'Panel',
+				href: '/panel'
 			},
 			{
 				label: 'Legend',

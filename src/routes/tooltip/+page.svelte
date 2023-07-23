@@ -3,6 +3,9 @@
 
 	import Chart from '@visualisations/primatives/Chart.svelte';
 	import { DEFAULT_MARGIN } from '@visualisations/util';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 
 	let w = 0;
 	let h = 0;
@@ -50,4 +53,8 @@
 			</div>
 		</TooltipWithBounds>
 	</div>
+</div>
+<div>
+	<h2>Code</h2>
+	<svelte:component this={data.content} />
 </div>

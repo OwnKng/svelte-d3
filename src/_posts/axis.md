@@ -1,3 +1,6 @@
+### Axis
+
+```svelte
 <script lang="ts">
 	import { getContext } from 'svelte';
 
@@ -20,8 +23,6 @@
 		: scale.ticks
 		? scale.ticks(numberOfTicks)
 		: scale.domain();
-
-	$: padding = scale.bandwidth ? scale.bandwidth() / 2 : 0;
 </script>
 
 <g
@@ -38,10 +39,9 @@
 
 	{#each ticks as tick, i}
 		<g
-			transform={`translate(${(orientation == 'x'
-				? [scale(tick) + padding, 0]
-				: [0, scale(tick) + padding]
-			).join(', ')})`}
+			transform={`translate(${(orientation == 'x' ? [scale(tick), 0] : [0, scale(tick)]).join(
+				', '
+			)})`}
 		>
 			<text
 				class="Axis__tick"
@@ -72,3 +72,60 @@
 		</text>
 	{/if}
 </g>
+```
+
+### AxisLeft
+
+```svelte
+<script lang="ts">
+	import Axis from './Axis.svelte';
+
+	export let scale: any;
+	export let label = '';
+	export let numberOfTicks = 4;
+	export let hideAxisLine = false;
+	export let hideTicks = false;
+	export let tickValues: any[] = [];
+
+	export let formatTick = (d: any) => d;
+</script>
+
+<Axis
+	orientation="y"
+	{scale}
+	{label}
+	{formatTick}
+	{numberOfTicks}
+	{hideAxisLine}
+	{hideTicks}
+	{tickValues}
+/>
+```
+
+### AxisBottom
+
+```svelte
+<script lang="ts">
+	import Axis from './Axis.svelte';
+
+	export let scale: any;
+	export let label = '';
+	export let numberOfTicks = 4;
+	export let hideAxisLine = false;
+	export let hideTicks = false;
+	export let tickValues: any[] = [];
+
+	export let formatTick = (d: any) => d;
+</script>
+
+<Axis
+	orientation="x"
+	{scale}
+	{label}
+	{formatTick}
+	{numberOfTicks}
+	{tickValues}
+	{hideAxisLine}
+	{hideTicks}
+/>
+```

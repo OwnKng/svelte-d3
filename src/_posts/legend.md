@@ -1,3 +1,6 @@
+### Legend
+
+```svelte
 <script lang="ts">
 	const iconHeight = 15;
 
@@ -26,3 +29,4 @@
 		</div>
 	{/each}
 </div>
+```

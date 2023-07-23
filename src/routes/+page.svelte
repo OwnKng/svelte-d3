@@ -38,7 +38,7 @@
 
 		<p class="mt-4">
 			Enjoy, <br />
-			<span class="text-emerald-400 text-lg font-bold">Owen King</span>.
+			<a href="https://ownkng.dev" class="text-emerald-400 text-lg font-bold">Owen King</a>.
 		</p>
 	</div>
 </div>
