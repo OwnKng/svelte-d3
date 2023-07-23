@@ -1,7 +1,14 @@
 <script lang="ts">
+	import svelte_logo from '../lib/assets/svelte.png';
+	import d3_logo from '../lib/assets/d3.png';
 </script>
 
 <div class="flex flex-col gap-8">
+	<div class="flex items-center gap-4 justify-center pb-8">
+		<img src={svelte_logo} alt="Svelte logo" class="w-16 h-auto" />
+		<span class="text-5xl font-bold">+</span>
+		<img src={d3_logo} alt="D3 logo" class="w-16 h-auto" />
+	</div>
 	<div>
 		<h1 class="text-5xl font-bold mb-4"><span>&#128075;</span>{' '}Hey there.</h1>
 		<p class="text-lg">
@@ -16,16 +23,16 @@
 			<li>
 				<p>
 					D3 is an awesome library, but parts of it are focused on manipulating the DOM in a way
-					that conflicts with Svelte's delcartive style. This collection uses D3 for things like
+					that conflicts with Svelte's delcartive syntax. This collection uses D3 for things like
 					manipulating data, creating scales, etc., but not for DOM manipulation.
 				</p>
 			</li>
 			<li>
 				<p>
-					The collections are designed to be as generic as possible, so they can be copied and
-					pasted into your own codebase with only a little adapatation. Basically, I wanted to
-					create a repo where I had a bunch of graphs that I could reach for every time I need to
-					create yet another bar chart, and I figured it might be useful to other people too.
+					The examples are designed to be as generic as possible, so they can be copied and pasted
+					into your own codebase with only a little adapatation. Basically, I wanted to create a
+					repo where I had a bunch of graphs that I could reach for every time I need to create yet
+					another bar chart, and I figured it might be useful to other people too.
 				</p>
 			</li>
 		</ul>
@@ -42,3 +49,6 @@
 		</p>
 	</div>
 </div>
+
+<style>
+</style>
