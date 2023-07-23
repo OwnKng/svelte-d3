@@ -6,7 +6,7 @@
 <div class="flex flex-col gap-8">
 	<div class="flex items-center gap-4 justify-center pb-8">
 		<img src={svelte_logo} alt="Svelte logo" class="w-16 h-auto" />
-		<span class="text-5xl font-bold">+</span>
+		<span class="text-5xl font-bold">x</span>
 		<img src={d3_logo} alt="D3 logo" class="w-16 h-auto" />
 	</div>
 	<div>
@@ -14,7 +14,7 @@
 		<p class="text-lg">
 			Welcome! This is a collection of a few responsive and interactive data visualisations built
 			using <a class="underline text-emerald-400" href="https://d3js.org/">D3</a> and
-			<a class="underline text-emerald-400" href="https://kit.svelte.dev/">SvelteKit</a>.
+			<a class="underline text-emerald-400" href="https://svelte.dev/">Svelte</a>.
 		</p>
 	</div>
 	<div class="flex flex-col gap-4">

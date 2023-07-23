@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>Svelte Viz</title>
+	<title>Svelte x D3</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="A set of example graphs built with Svelte and D3" />
 	<link rel="icon" type="image/png" href="/favicon.png" />
@@ -25,7 +25,7 @@
 	<div class="w-full max-w-content mx-auto">
 		<header class="mb-12 pt-4 px-2 md:px-0 flex items-start gap-8 justify-between">
 			<div>
-				<a href="/" class="text-3xl text-zinc-50 font-bold">Svelte Viz</a>
+				<a href="/" class="text-3xl text-zinc-50 font-bold">Svelte x D3</a>
 				<p>A set of example graphs and helpers built with Svelte and D3</p>
 			</div>
 			<div>
