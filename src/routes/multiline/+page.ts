@@ -4,11 +4,11 @@ import { getMarkdownForComponent } from '@utils/markdown';
 
 export const load = (async ({ fetch }) => {
 	const markdown = getMarkdownForComponent('multiline');
-	const { indicator, series } = await getWbData(fetch, ['GBR;CHN;USA'], 'NY.GDP.PCAP.CD');
 
 	return {
 		content: markdown,
-		indicator,
-		series: series
+		streamed: {
+			data: getWbData(fetch, ['GBR;CHN;USA'], 'NY.GDP.PCAP.CD')
+		}
 	};
 }) satisfies PageLoad;
