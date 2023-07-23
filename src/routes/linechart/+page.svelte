@@ -32,3 +32,5 @@
 {:catch error}
 	<p>{error.message}</p>
 {/await}
+<h2>Code</h2>
+<svelte:component this={data.content} />

@@ -11,7 +11,7 @@
 		</p>
 	</div>
 	<div class="flex flex-col gap-4">
-		<h2 class="text-2xl font-bold">Why?</h2>
+		<h2 class="text-2xl font-bold mb-0">Why?</h2>
 		<ul class="flex flex-col gap-4 list-disc">
 			<li>
 				<p>
@@ -30,7 +30,7 @@
 			</li>
 		</ul>
 		<p>
-			I should note that these visualisations also use <a
+			These visualisations also use <a
 				href="https://tailwindcss.com/"
 				class="underline text-emerald-400">Tailwind</a
 			> for some styling.

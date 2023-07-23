@@ -27,3 +27,5 @@
 	/>
 </figure>
 <span class="text-sm text-gray-500">Source: World Bank</span>
+<h2>Code</h2>
+<svelte:component this={data.content} />

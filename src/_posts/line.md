@@ -1,3 +1,6 @@
+### Line
+
+```svelte
 <script lang="ts">
 	import { draw } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -37,3 +40,4 @@
 		transition: all 0.3s ease-out;
 	}
 </style>
+```

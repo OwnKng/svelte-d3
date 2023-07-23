@@ -47,5 +47,6 @@
 		</Chart>
 	</div>
 	<!-- Post -->
+	<h2>Code</h2>
 	<svelte:component this={data.content} />
 </div>

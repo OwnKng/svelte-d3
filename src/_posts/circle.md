@@ -1,7 +1,7 @@
-## Code
+### Circle
 
 ```svelte
-<script>
+<script lang="ts">
 	export let x: number;
 	export let y: number;
 	export let radius: number = 10;

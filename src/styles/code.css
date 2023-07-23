@@ -1,143 +1,71 @@
-/**
- * atom-dark theme for `prism.js`
- * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
- * @author Joe Gibson (@gibsjose)
- */
-
-code[class*='language-'],
-pre[class*='language-'] {
-	color: #c5c8c6;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+code {
+	counter-reset: step;
+	counter-increment: step 0;
 }
 
-/* Code blocks */
-pre[class*='language-'] {
-	padding: 1em;
-	margin: 0.5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
+.shiki {
+	border-radius: var(--spacing-1);
+	padding: var(--spacing-6) var(--spacing-4);
+	margin: var(--spacing-4) auto var(--spacing-18);
+	box-shadow: var(--shadow-elevation-medium);
+	overflow-x: auto;
+	max-width: var(--max-width-full);
 }
 
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-	background: #1d1f21;
+.highlight-line {
+	display: inline-block;
+	background-color: var(--colour-code-background-highlighted);
+	width: calc(var(--max-width-full) + var(--spacing-4));
+	border-left: var(--spacing-1) solid var(--colour-code-line-highlight);
+	margin-left: calc(-1 * var(--spacing-1));
 }
 
-/* Inline code */
-:not(pre) > code[class*='language-'] {
-	padding: 0.1em;
-	border-radius: 0.3em;
+:root {
+	--colour-brand: hsl(193 67% 34%); /* elm */
+	--colour-light: hsl(7 53% 97%); /* fantasy */
+
+	--colour-code-line-numbers: hsl(219 14% 71% / 0.8);
+	--colour-code-line-highlight: hsl(34 96% 55%);
+	--colour-code-background-hue: 220;
+	--colour-code-background-saturation: 13%;
+	--colour-code-background-lightness: 18%;
+	--colour-code-background-highlighted: hsl(
+		var(--colour-code-background-hue) var(--colour-code-background-saturation)
+			calc(var(--colour-code-background-lightness) + 5%)
+	);
+
+	--spacing-px: 1px;
+	--spacing-px-2: 2px;
+	--spacing-0: 0;
+	--spacing-1: 0.25rem;
+	--spacing-2: 0.5rem;
+	--spacing-4: 1rem;
+	--spacing-6: 1.5rem;
+	--spacing-12: 3rem;
+	--spacing-18: 4.5rem;
+	--max-width-wrapper: 48rem;
+	--max-width-full: 100%;
+
+	--font-size-root: 16px;
+	--font-size-3: 1.563rem;
+	--font-size-4: 1.953rem;
+	--font-size-5: 2.441rem;
+	--font-size-6: 3.052rem;
+
+	--font-weight-normal: 400;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+
+	--line-height-normal: 1.5;
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #7c7c7c;
-}
-
-.token.punctuation {
-	color: #c5c8c6;
-}
-
-.namespace {
-	opacity: 0.7;
-}
-
-.token.property,
-.token.keyword,
-.token.tag {
-	color: #96cbfe;
-}
-
-.token.class-name {
-	color: #ffffb6;
-	text-decoration: underline;
-}
-
-.token.boolean,
-.token.constant {
-	color: #99cc99;
-}
-
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
-.token.number {
-	color: #ff73fd;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #a8ff60;
-}
-
-.token.variable {
-	color: #c6c5fe;
-}
-
-.token.operator {
-	color: #ededed;
-}
-
-.token.entity {
-	color: #ffffb6;
-	cursor: help;
-}
-
-.token.url {
-	color: #96cbfe;
-}
-
-.language-css .token.string,
-.style .token.string {
-	color: #87c38a;
-}
-
-.token.atrule,
-.token.attr-value {
-	color: #f9ee98;
-}
-
-.token.function {
-	color: #dad085;
-}
-
-.token.regex {
-	color: #e9c062;
-}
-
-.token.important {
-	color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-
-.token.italic {
-	font-style: italic;
+code .line::before {
+	display: inline-block;
+	content: counter(step);
+	counter-increment: step;
+	width: var(--spacing-6);
+	margin-right: var(--spacing-6);
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+	color: var(--colour-line-numbers);
 }

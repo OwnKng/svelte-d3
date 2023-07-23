@@ -4,8 +4,6 @@
 	import Skelteton from '@components/Skeleton.svelte';
 	import BarChart from '@visualisations/charts/BarChart.svelte';
 
-	import post from './post.md';
-
 	export let data: PageData;
 
 	let selected = 'United States';
@@ -67,5 +65,6 @@
 	<p>{error.message}</p>
 {/await}
 <div class="mt-8">
-	<svelte:component this={post} />
+	<h2>Code</h2>
+	<svelte:component this={data.content} />
 </div>

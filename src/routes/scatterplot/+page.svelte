@@ -2,22 +2,29 @@
 	import ScatterPlot from '@visualisations/charts/Scatter.svelte';
 	import { createDummyData } from '../../utils';
 	import { formatPercent } from '../../utils';
+	import Button from '@components/Button.svelte';
+	import type { PageData } from './$types';
 
-	import post from './post.md';
+	export let data: PageData;
 
-	let data = createDummyData(200);
+	let dummy = createDummyData(200);
 </script>
 
 <h1 class="text-3xl font-bold mb-8">Scatterplot</h1>
 
-<button
-	class="px-4 py-2 border bg-emerald-400 border-emerald-600 text-zinc-900 rounded-full hover:bg-emerald-500 hover:border-emerald-700 transition"
-	on:click={() => (data = createDummyData(200))}>Regenerate data</button
->
+<Button on:click={() => (dummy = createDummyData(200))}>Regenerate data</Button>
 
 <div class="w-full h-[500px] my-4">
-	<ScatterPlot {data} x="x" y="y" color="color" xFormat={formatPercent} yFormat={formatPercent} />
+	<ScatterPlot
+		data={dummy}
+		x="x"
+		y="y"
+		color="color"
+		xFormat={formatPercent}
+		yFormat={formatPercent}
+	/>
 </div>
 <div class="mt-8">
-	<svelte:component this={post} />
+	<h2>Code</h2>
+	<svelte:component this={data.content} />
 </div>

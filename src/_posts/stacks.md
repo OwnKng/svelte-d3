@@ -1,7 +1,7 @@
-## Code
+### Stacks
 
-```svelte
-<script>
+````svelte
+<script lang="ts">
 	import { DEFAULT_MARGIN } from '../util';
 	import { scaleLinear, scaleOrdinal } from 'd3-scale';
 	import { extent } from 'd3-array';
@@ -15,7 +15,6 @@
 	import { format } from 'd3-format';
 	import Panel from '@visualisations/helpers/Panel.svelte';
 
-	//_ props
 	export let margins = DEFAULT_MARGIN;
 	export let width = 0;
 	export let height = 0;
@@ -38,7 +37,7 @@
 		innerWidth: Math.max(width - margins.left - margins.right, 0)
 	};
 
-	//_ accessors
+	//_ Accessors
 	$: getY = (d: any) => d[y];
 	$: getX = (d: any) => d[x];
 	$: getColor = (d: any) => d[color];
@@ -50,6 +49,7 @@
 		.domain([...new Set(data.map(getColor))])
 		.range(colors);
 
+	//_ data
 	$: getXScaled = (d: any) => xScale(getX(d));
 	$: getYScaled = (d: any) => yScale(getY(d));
 	$: getColorScaled = (d: any) => colorScale(getColor(d)) as string;
@@ -76,6 +76,7 @@
 	};
 </script>
 
+### Scatter ```svelte
 <div class="w-full h-full flex flex-col">
 	<div>
 		<LegendOrdinal scale={colorScale} />
@@ -112,4 +113,4 @@
 		{/if}
 	</div>
 </div>
-```
+````
