@@ -8,11 +8,16 @@ const getNumberOfPages = async (fetch: typeof globalThis.fetch, url: string) =>
 export const getWbData = async (
 	fetch: typeof globalThis.fetch,
 	countries = ['WLD'],
-	code = 'SI.POV.DDAY'
+	code = 'SI.POV.DDAY',
+	date?: string
 ) => {
 	const countryCodes = countries.length === 1 ? countries[0] : countries.join(';');
 
-	const indicatorUrl = `${url}/${countryCodes}/indicator/${code}/?format=json&per_page=100`;
+	const indicatorUrl = `${url}/${countryCodes}/indicator/${code}/?format=json&per_page=100${
+		date ? `&date=${date}` : ''
+	}`;
+
+	console.log(indicatorUrl);
 
 	const numberOfPages = await getNumberOfPages(fetch, indicatorUrl);
 

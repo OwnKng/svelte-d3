@@ -11,7 +11,6 @@
 	import AxisLeft from '@visualisations/helpers/AxisLeft.svelte';
 	import GridRows from '@visualisations/helpers/GridRows.svelte';
 	import AxisBottom from '@visualisations/helpers/AxisBottom.svelte';
-	import Tooltip from '@visualisations/helpers/Tooltip.svelte';
 
 	import type { TooltipData } from '../types';
 	import TooltipWithBounds from '@visualisations/helpers/TooltipWithBounds.svelte';

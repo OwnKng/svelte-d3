@@ -38,6 +38,10 @@ export const links = [
 			{
 				label: 'Stacks',
 				href: '/stacks'
+			},
+			{
+				label: 'Arcs',
+				href: '/arcs'
 			}
 		]
 	},

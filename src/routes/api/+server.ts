@@ -3,12 +3,12 @@ import { cacheHeader } from 'pretty-cache-header';
 
 //_ A simple abstraction over the World Bank API which adds caching headers
 export const POST = async ({ request, fetch }) => {
-	const { countryCodes, code } = await request.json();
+	const { countryCodes, code, date } = await request.json();
 
 	if (!countryCodes || !code) return new Response('Missing countryCodes or code', { status: 400 });
 
 	try {
-		const data = await getWbData(fetch, countryCodes, code);
+		const data = await getWbData(fetch, countryCodes, code, date);
 
 		return new Response(JSON.stringify(data), {
 			headers: {
@@ -22,7 +22,7 @@ export const POST = async ({ request, fetch }) => {
 				'content-type': 'application/json;charset=UTF-8'
 			}
 		});
-	} catch (err) {
+	} catch (err: any) {
 		return new Response(err.message, { status: 500 });
 	}
 };

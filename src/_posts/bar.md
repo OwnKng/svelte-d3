@@ -8,28 +8,14 @@
 	export let height = 0;
 	export let fill = 'black';
 	export let style = '';
-
-	import { slide } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<rect
-	class="Bar"
-	transition:slide={{ delay: 100, duration: 500, easing: quintOut, axis: 'y' }}
-	{x}
-	{y}
-	{height}
-	{width}
-	{fill}
-	{style}
-	on:mousemove
-	on:mouseleave
-/>
+<rect class="Bar" {x} {y} {height} {width} {fill} {style} on:mousemove on:mouseleave />
 
 <style>
 	.Bar {
-		transition: y 0.5s ease;
+		transition: all 0.5s ease;
 	}
 </style>
 ```
