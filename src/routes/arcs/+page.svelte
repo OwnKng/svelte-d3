@@ -1,13 +1,20 @@
 <script lang="ts">
 	import Arcs from '@visualisations/charts/Arcs.svelte';
 	import type { PageData } from './$types';
+	import Skeleton from '@components/Skeleton.svelte';
+
+	import Error from '@components/Error.svelte';
 
 	export let data: PageData;
 
 	let selected = 'United States';
 </script>
 
-{#await data.streamed.data then value}
+{#await data.streamed.data}
+	<div class="w-full h-graph rounded">
+		<Skeleton />
+	</div>
+{:then value}
 	<div>
 		<span class="uppercase text-xs">Select Country</span>
 		<div class="flex gap-2 flex-wrap mb-2">
@@ -16,8 +23,7 @@
 				class="border rounded px-3 py-1 shadow rounded-full
 		{selected === 'United States'
 					? 'bg-emerald-400 text-zinc-900 border-emerald-600'
-					: 'border-zinc-400 text-zinc-200'}
-		"
+					: 'border-zinc-400 text-zinc-200'}"
 			>
 				United States
 			</button>
@@ -56,4 +62,10 @@
 			value="value"
 		/>
 	</figure>
+	<span class="text-sm text-gray-500">Source: World Bank</span>
+{:catch error}
+	<Error />
 {/await}
+
+<h2>Code</h2>
+<svelte:component this={data.content} />

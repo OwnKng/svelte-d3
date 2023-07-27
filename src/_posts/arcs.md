@@ -1,3 +1,6 @@
+### Arcs
+
+```svelte
 <script lang="ts">
 	import { pie } from 'd3-shape';
 	import { scaleOrdinal } from 'd3-scale';
@@ -54,3 +57,4 @@
 		</Chart>
 	</div>
 </div>
+```

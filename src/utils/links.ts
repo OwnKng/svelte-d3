@@ -13,6 +13,10 @@ export const links = [
 			{
 				label: 'Line',
 				href: '/line'
+			},
+			{
+				label: 'Arc',
+				href: '/arc'
 			}
 		]
 	},

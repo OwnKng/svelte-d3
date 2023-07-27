@@ -5,22 +5,20 @@
 	export let outerRadius = 0;
 	export let startAngle = 0;
 	export let endAngle = 0;
+	export let cornerRadius = 0;
+	export let padAngle = 0;
 
-	export let d: any[];
 	export let fill = 'black';
 	export let stroke = 'black';
 	export let style = '';
 
-	$: path = arc().innerRadius(innerRadius).outerRadius(outerRadius);
+	$: path = arc()
+		.innerRadius(innerRadius)
+		.outerRadius(outerRadius)
+		.startAngle(startAngle)
+		.endAngle(endAngle)
+		.cornerRadius(cornerRadius)
+		.padAngle(padAngle) as any;
 </script>
 
-<path
-	{...$$restProps}
-	d={path({
-		startAngle,
-		endAngle
-	})}
-	{fill}
-	{stroke}
-	{style}
-/>
+<path class="Arc" d={path()} {fill} {stroke} {style} />
