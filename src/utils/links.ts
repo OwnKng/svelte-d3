@@ -50,6 +50,10 @@ export const links = [
 			{
 				label: 'Polar',
 				href: '/polar'
+			},
+			{
+				label: 'Dumbbell',
+				href: '/dumbbell'
 			}
 		]
 	},
