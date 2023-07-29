@@ -17,8 +17,6 @@ export const getWbData = async (
 		date ? `&date=${date}` : ''
 	}`;
 
-	console.log(indicatorUrl);
-
 	const numberOfPages = await getNumberOfPages(fetch, indicatorUrl);
 
 	const data = await Promise.all(

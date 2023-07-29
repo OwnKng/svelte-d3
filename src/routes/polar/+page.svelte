@@ -1,12 +1,14 @@
 <script lang="ts">
-	import BarStack from '@visualisations/charts/BarStack.svelte';
-	export let data;
-	import { format } from 'd3-format';
-	import Skeleton from '@components/Skeleton.svelte';
+	import PolarBar from '@visualisations/charts/PolarBar.svelte';
+	import type { PageData } from './$types';
 	import Error from '@components/Error.svelte';
+	import Skeleton from '@components/Skeleton.svelte';
+	import { format } from 'd3-format';
+
+	export let data: PageData;
 </script>
 
-<h1 class="text-3xl font-bold mb-8">Stacked Bar</h1>
+<h1 class="text-3xl font-bold mb-8">Polar</h1>
 
 {#await data.streamed.data}
 	<div class="w-full h-graph rounded">
@@ -17,19 +19,11 @@
 		{value.indicator}
 	</h3>
 	<figure class="w-full h-graph">
-		<BarStack
-			data={value.series}
-			x="date"
-			y="value"
-			color="country"
-			xFormat={(d) => d}
-			yFormat={(d) => format('.2s')(d)}
-		/>
+		<PolarBar data={value.series} x="date" y="value" yFormat={(y) => format('.0%')(y / 100)} />
 	</figure>
 	<span class="text-sm text-gray-500">Source: World Bank</span>
-{:catch error}
+{:catch}
 	<Error />
 {/await}
-
 <h2>Code</h2>
 <svelte:component this={data.content} />

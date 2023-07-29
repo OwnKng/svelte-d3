@@ -46,6 +46,10 @@ export const links = [
 			{
 				label: 'Arcs',
 				href: '/arcs'
+			},
+			{
+				label: 'Polar',
+				href: '/polar'
 			}
 		]
 	},

@@ -8,7 +8,7 @@
 	export let cornerRadius = 0;
 	export let padAngle = 0;
 
-	export let fill = 'black';
+	export let fill = 'transparent';
 	export let stroke = 'black';
 	export let style = '';
 
@@ -21,4 +21,5 @@
 		.padAngle(padAngle) as any;
 </script>
 
-<path class="Arc" d={path()} {fill} {stroke} {style} />
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<path class="Arc" d={path()} {fill} {stroke} {style} on:mousemove on:mouseleave />
