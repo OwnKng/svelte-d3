@@ -109,7 +109,7 @@
 						text-anchor={(angle * 180) / Math.PI < 180 ? 'end' : 'start'}
 						dominant-baseline="middle"
 						fill="var(--colors-text)"
-						style="font-size: 0.75rem;"
+						style="font-size: 10px;"
 						stroke="var(--colors-background)"
 						stroke-width="2px"
 						paint-order="stroke"
@@ -125,7 +125,7 @@
 						text-anchor="middle"
 						alignment-baseline="baseline"
 						fill="var(--colors-text)"
-						style="font-size: 0.75rem;"
+						style="font-size: 12px;"
 						stroke="var(--colors-background)"
 						stroke-width="2px"
 						paint-order="stroke"
