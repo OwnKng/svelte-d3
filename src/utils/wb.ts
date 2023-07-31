@@ -31,7 +31,12 @@ export const getWbData = async (
 		indicator: data[0][0].indicator.value,
 		series: data
 			.flat()
-			.map(({ country, date, value }) => ({ country: country.value, date, value }))
+			.map(({ country, date, value, countryiso3code }) => ({
+				countryCode: countryiso3code,
+				country: country.value,
+				date,
+				value
+			}))
 			.filter(({ value }) => value !== null)
 			.sort((a, b) => a.date - b.date)
 	};

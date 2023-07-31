@@ -52,6 +52,10 @@ export const links = [
 				href: '/polar'
 			},
 			{
+				label: 'Polar Stack',
+				href: '/polarstack'
+			},
+			{
 				label: 'Dumbbell',
 				href: '/dumbbell'
 			}
