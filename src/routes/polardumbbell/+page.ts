@@ -2,7 +2,7 @@ import type { PageLoad } from '../arc/$types';
 import { getMarkdownForComponent } from '@utils/markdown';
 
 export const load = (async ({ fetch }) => {
-	const markdown = getMarkdownForComponent('dumbell');
+	const markdown = getMarkdownForComponent('polardumbbell');
 
 	const data = Promise.all([
 		fetch('/api', {
