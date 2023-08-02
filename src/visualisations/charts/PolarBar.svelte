@@ -25,7 +25,7 @@
 		height: height,
 		margins: margin,
 		innerWidth: Math.max(width - margin.left - margin.right, 0),
-		innerHeight: Math.max(height - margin.top - margin.bottom)
+		innerHeight: Math.max(height - margin.top - margin.bottom, 0)
 	};
 
 	$: outerRadius = Math.min(dimensions.innerWidth, dimensions.innerHeight) / 2;

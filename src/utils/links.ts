@@ -48,6 +48,10 @@ export const links = [
 				href: '/arcs'
 			},
 			{
+				label: 'Dumbbell',
+				href: '/dumbbell'
+			},
+			{
 				label: 'Polar',
 				href: '/polar'
 			},
@@ -56,8 +60,8 @@ export const links = [
 				href: '/polarstack'
 			},
 			{
-				label: 'Dumbbell',
-				href: '/dumbbell'
+				label: 'Polar Dummbell',
+				href: '/polardumbbell'
 			}
 		]
 	},

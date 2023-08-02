@@ -33,7 +33,6 @@
 
 	$: outerRadius = Math.min(dimensions.innerWidth, dimensions.innerHeight) / 2;
 	$: innerRadius = outerRadius * 0.5;
-	$: labelRadius = innerRadius * 0.85;
 
 	// accessors
 	$: getX = (d: any) => d[x];
