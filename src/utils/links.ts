@@ -62,6 +62,10 @@ export const links = [
 			{
 				label: 'Polar Dummbell',
 				href: '/polardumbbell'
+			},
+			{
+				label: 'Diverging Bar',
+				href: '/diverging-bar'
 			}
 		]
 	},

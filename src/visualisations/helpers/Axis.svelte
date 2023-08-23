@@ -10,6 +10,9 @@
 	export let hideAxisLine = false;
 	export let hideTicks = false;
 	export let tickValues: any[] = [];
+	export let bottom = 0;
+	export let left = 0;
+	export let style = '';
 
 	//@ts-ignore
 	const { dimensions: dimensionsStore } = getContext('Chart');
@@ -26,7 +29,7 @@
 
 <g
 	class="Axis Axis--dimension-{orientation}"
-	transform={`translate(0, ${orientation == 'x' ? dimensions.innerHeight : 0})`}
+	transform={`translate(${left}, ${orientation == 'x' ? dimensions.innerHeight - bottom : 0})`}
 >
 	{#if !hideAxisLine}
 		<line
@@ -35,7 +38,6 @@
 			y2={orientation == 'y' ? dimensions.innerHeight : 0}
 		/>
 	{/if}
-
 	{#each ticks as tick, i}
 		<g
 			transform={`translate(${(orientation == 'x'
@@ -49,6 +51,7 @@
 				y={orientation === 'x' ? 25 : 0}
 				text-anchor={orientation == 'y' ? 'end' : 'middle'}
 				alignment-baseline="middle"
+				{style}
 			>
 				{formatTick(tick)}
 			</text>
