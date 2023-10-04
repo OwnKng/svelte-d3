@@ -44,6 +44,10 @@ export const links = [
 				href: '/stacks'
 			},
 			{
+				label: 'Stacked Area',
+				href: '/areastacks'
+			},
+			{
 				label: 'Arcs',
 				href: '/arcs'
 			},

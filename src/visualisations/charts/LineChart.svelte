@@ -93,7 +93,7 @@
 		<Chart {dimensions}>
 			<Grid orientation="y" scale={yScale} />
 			{#if filled}
-				<Area path={areaPath} {color} />
+				<Area path={areaPath} {color} opacity={0.2} />
 			{/if}
 			<Line {path} {color} />
 			<Axis orientation="x" scale={xScale} numberOfTicks={3} formatTick={xFormat} />

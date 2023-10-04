@@ -5,6 +5,7 @@
 	import Chart from '@visualisations/primatives/Chart.svelte';
 	import { scaleLinear, scaleBand } from 'd3-scale';
 	import type { PageData } from './$types';
+	import AxisTop from '@visualisations/helpers/AxisTop.svelte';
 
 	export let data: PageData;
 
@@ -38,6 +39,7 @@
 		<Chart {dimensions}>
 			<AxisLeft scale={yScale} />
 			<AxisBottom scale={xScale} />
+			<AxisTop scale={xScale} bottom={dimensions.innerHeight} hideAxisLine />
 		</Chart>
 	{/if}
 </div>

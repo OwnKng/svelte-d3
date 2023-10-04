@@ -9,7 +9,9 @@
 <h1 class="text-3xl font-bold mb-8">Polar Dumbbell</h1>
 
 {#await data.streamed.data}
-	<Skeleton />
+	<div class="w-full h-graph rounded">
+		<Skeleton />
+	</div>
 {:then value}
 	<h3>{value.indicator}</h3>
 	<figure class="w-full h-graph">
