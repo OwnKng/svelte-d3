@@ -48,6 +48,7 @@
 						endAngle={arc.endAngle}
 						cornerRadius={5}
 						padAngle={0.01}
+						animated
 					/>
 				{/each}
 			</g>

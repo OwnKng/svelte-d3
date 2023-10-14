@@ -112,6 +112,10 @@ export const links = [
 			{
 				label: 'Facets',
 				href: '/facets'
+			},
+			{
+				label: 'Angles',
+				href: '/angles'
 			}
 		]
 	}

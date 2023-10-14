@@ -40,6 +40,7 @@
 					endAngle={Math.PI * 2.5}
 					stroke="transparent"
 					cornerRadius={20}
+					animated
 				/>
 				<line
 					x1={-dimensions.innerWidth * 0.5}

@@ -3,9 +3,8 @@
 	import { createDummyData } from '../../utils';
 	import { formatPercent } from '../../utils';
 	import Button from '@components/Button.svelte';
-	import type { PageData } from '../scatterplot/$types';
 
-	export let data: PageData;
+	export let data;
 
 	let dummy = createDummyData(200);
 </script>
