@@ -17,6 +17,10 @@ export const links = [
 			{
 				label: 'Arc',
 				href: '/arc'
+			},
+			{
+				label: 'Triangle',
+				href: '/triangle'
 			}
 		]
 	},
@@ -116,6 +120,10 @@ export const links = [
 			{
 				label: 'Angles',
 				href: '/angles'
+			},
+			{
+				label: 'Voronoi',
+				href: '/voronoi'
 			}
 		]
 	}
