@@ -1,3 +1,6 @@
+### Gradient
+
+```svelte
 <script lang="ts">
 	export let id = '';
 	export let x1 = '0';
@@ -12,3 +15,4 @@
 		<stop offset={`${(i * 100) / (colors.length - 1)}%`} stop-color={color} />
 	{/each}
 </linearGradient>
+```

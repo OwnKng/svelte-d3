@@ -21,7 +21,7 @@
 	<link rel="icon" type="image/png" href="/favicon.png" />
 </svelte:head>
 
-<div class="w-full h-full min-h-screen bg-zinc-900 text-zinc-200">
+<div class="w-full h-full min-h-screen bg-background text-zinc-200">
 	<div class="w-full max-w-content mx-auto">
 		<header class="mb-12 pt-4 px-2 md:px-0 flex items-start gap-8 justify-between">
 			<div>

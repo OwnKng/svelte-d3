@@ -1,1 +1,1 @@
-<div class="w-full h-full bg-zinc-800 rounded animate-pulse shadow" />
+<div class="w-full h-full bg-foreground rounded animate-pulse shadow" />

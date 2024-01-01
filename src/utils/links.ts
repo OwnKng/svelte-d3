@@ -21,6 +21,10 @@ export const links = [
 			{
 				label: 'Triangle',
 				href: '/triangle'
+			},
+			{
+				label: 'Arrow',
+				href: '/arrow'
 			}
 		]
 	},
@@ -74,6 +78,14 @@ export const links = [
 			{
 				label: 'Diverging Bar',
 				href: '/diverging-bar'
+			},
+			{
+				label: 'Arrows',
+				href: '/arrows'
+			},
+			{
+				label: 'Histogram',
+				href: '/histogram'
 			}
 		]
 	},
@@ -107,6 +119,10 @@ export const links = [
 			{
 				label: 'Tooltip',
 				href: '/tooltip'
+			},
+			{
+				label: 'Gradient',
+				href: '/gradient'
 			}
 		]
 	},

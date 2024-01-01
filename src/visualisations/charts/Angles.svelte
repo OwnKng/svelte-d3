@@ -74,8 +74,8 @@
 				{startAngle}
 				endAngle={end}
 				animated
-				fill="var(--colors-text)"
-				style="fill-opacity: 0.25; stroke-opacity: 0.25;"
+				fill="#3a3f4b"
+				style="fill-opacity: 0.4; stroke-opacity: 0.4;"
 				stroke="var(--colors-text)"
 			/>
 			<Arc
