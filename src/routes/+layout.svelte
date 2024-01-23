@@ -46,12 +46,12 @@
 				</a>
 			</div>
 		</header>
-		<div class="md:hidden w-full px-2 relative">
+		<div class="md:hidden w-full relative">
 			<MobileNavigation>
 				<nav class="col-span-1 flex flex-col gap-3">
 					{#each links as link}
 						<div>
-							<p class="font-bold text-emerald-400">{link.title}</p>
+							<p class="font-bold text-primary">{link.title}</p>
 							<ul>
 								{#each link.links as route}
 									<li>
@@ -68,7 +68,7 @@
 			<nav class="col-span-1 flex flex-col gap-3 hidden md:flex">
 				{#each links as link}
 					<div>
-						<p class="font-bold text-emerald-400">{link.title}</p>
+						<p class="font-bold text-primary">{link.title}</p>
 						<ul>
 							{#each link.links as route}
 								<li>
@@ -84,7 +84,7 @@
 			</main>
 		</div>
 		<footer class="mt-12 text-sm text-zinc-300 px-2 md:px-0 pb-4">
-			<p>Made by <a class="underline text-emerald-400" href="https://ownkng.dev">Owen King</a></p>
+			<p>Made by <a class="underline text-primary" href="https://ownkng.dev">Owen King</a></p>
 		</footer>
 	</div>
 </div>

@@ -9,7 +9,8 @@ export default {
 				midnight: 'var(--colors-midnight)',
 				'midnight-75': 'var(--colors-midnight-75)',
 				'midnight-50': 'var(--colors-midnight-50)',
-				'midnight-25': 'var(--colors-midnight-25)'
+				'midnight-25': 'var(--colors-midnight-25)',
+				primary: 'var(--colors-primary)'
 			},
 			maxWidth: {
 				content: '1000px'
