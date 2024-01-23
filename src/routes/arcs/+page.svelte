@@ -4,6 +4,7 @@
 	import Skeleton from '@components/Skeleton.svelte';
 
 	import Error from '@components/Error.svelte';
+	import Button from '@components/Button.svelte';
 
 	export let data: PageData;
 
@@ -18,33 +19,11 @@
 	<div>
 		<span class="uppercase text-xs">Select Country</span>
 		<div class="flex gap-2 flex-wrap mb-2">
-			<button
-				on:click={() => (selected = 'United States')}
-				class="border rounded px-3 py-1 shadow rounded-full
-		{selected === 'United States'
-					? 'bg-emerald-400 text-zinc-900 border-emerald-600'
-					: 'border-zinc-400 text-zinc-200'}"
-			>
+			<Button on:click={() => (selected = 'United States')} active={selected === 'United States'}>
 				United States
-			</button>
-			<button
-				on:click={() => (selected = 'China')}
-				class="border rounded px-3 py-1 shadow rounded-full
-		{selected === 'China'
-					? 'bg-emerald-400 text-zinc-900 border-emerald-600'
-					: 'border-zinc-400 text-zinc-200'}"
-			>
-				China
-			</button>
-			<button
-				on:click={() => (selected = 'India')}
-				class="border rounded px-3 py-1 shadow rounded-full
-		{selected === 'India'
-					? 'bg-emerald-400 text-zinc-900 border-emerald-600'
-					: 'border-zinc-400 text-zinc-200'}"
-			>
-				India
-			</button>
+			</Button>
+			<Button on:click={() => (selected = 'China')} active={selected === 'China'}>China</Button>
+			<Button on:click={() => (selected = 'India')} active={selected === 'India'}>India</Button>
 		</div>
 	</div>
 	<h3 class="text-lg font-bold mb-2">
