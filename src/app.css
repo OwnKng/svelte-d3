@@ -8,7 +8,13 @@
 	--colors-text: #d4d4d8;
 	--colors-axis: #d4d4d8;
 	--colors-grid: #292e3d;
-	--colors-primary: #34d399;
+	--colors-primary: #5de4c7;
+
+	/* UI */
+	--colors-midnight: #0e0f13;
+	--colors-midnight-75: #1b1e28;
+	--colors-midnight-50: #292e3d;
+	--colors-midnight-25: #3a3f4b;
 }
 
 body {

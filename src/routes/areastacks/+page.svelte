@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Button from '@components/Button.svelte';
 	import Error from '@components/Error.svelte';
 	import Skeleton from '@components/Skeleton.svelte';
 	import AreaStack from '@visualisations/charts/AreaStack.svelte';
@@ -21,16 +22,9 @@
 			<span class="uppercase text-xs">Select Country</span>
 			<div class="flex gap-2 flex-wrap mb-2">
 				{#each ['United States', 'United Kingdom', 'Japan', 'China', 'India'] as country}
-					<button
-						on:click={() => (selected = country)}
-						class="border rounded px-3 py-1 shadow rounded-full
-            {selected === country
-							? 'bg-emerald-400 text-zinc-900 border-emerald-600'
-							: 'border-zinc-400 text-zinc-200'}
-            "
-					>
+					<Button on:click={() => (selected = country)} active={selected === country}>
 						{country}
-					</button>
+					</Button>
 				{/each}
 			</div>
 		</div>

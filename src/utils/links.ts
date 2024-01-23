@@ -86,6 +86,14 @@ export const links = [
 			{
 				label: 'Histogram',
 				href: '/histogram'
+			},
+			{
+				label: 'Beeswarm',
+				href: '/beeswarm'
+			},
+			{
+				label: 'Beeswarms',
+				href: '/beeswarms'
 			}
 		]
 	},
