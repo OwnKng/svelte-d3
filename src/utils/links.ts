@@ -80,6 +80,10 @@ export const links = [
 				href: '/diverging-bar'
 			},
 			{
+				label: 'Divering Area',
+				href: '/diverging-area'
+			},
+			{
 				label: 'Arrows',
 				href: '/arrows'
 			},
@@ -94,6 +98,10 @@ export const links = [
 			{
 				label: 'Beeswarms',
 				href: '/beeswarms'
+			},
+			{
+				label: 'Difference',
+				href: '/difference'
 			}
 		]
 	},

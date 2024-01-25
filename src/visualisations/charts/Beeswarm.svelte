@@ -39,7 +39,7 @@
 
 	// Scales
 	$: xScale = scaleLog(extent(data, getX), [0, dimensions.innerWidth]).nice();
-	$: rScale = scaleSqrt(extent(data, getRadius), [2, 32]);
+	$: rScale = scaleSqrt(extent(data, getRadius), [2, width < 400 ? 12 : 32]);
 	$: colorScale = scaleOrdinal(
 		[...new Set(data.map(getColor))],
 		['#5de4c7', '#f6e05e', '#f6ad55', '#fc8181', '#90cdf4', '#a0aec0']
