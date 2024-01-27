@@ -1,8 +1,9 @@
 import { preprocessMeltUI, sequence } from '@melt-ui/pp';
-import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.mjs';
+import adapter from '@sveltejs/adapter-vercel';
+
 /** @type {import('@sveltejs/kit').Config}*/
 const config = {
 	extensions: ['.svelte', '.md'],
@@ -25,8 +26,7 @@ const config = {
 		vitePreprocess(),
 		mdsvex({
 			extension: '.md'
-		}),
-		preprocessMeltUI()
+		})
 	])
 };
 export default config;

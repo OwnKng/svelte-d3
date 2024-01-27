@@ -3,7 +3,7 @@ import { getMarkdownForComponent } from '@utils/markdown';
 
 export const load = (async ({ fetch }) => {
 	return {
-		content: getMarkdownForComponent('divergingarea'),
+		content: await getMarkdownForComponent('divergingarea'),
 		streamed: {
 			data: fetch('/api', {
 				method: 'POST',

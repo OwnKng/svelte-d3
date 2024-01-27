@@ -6,9 +6,13 @@
 	import '../app.css';
 	import '../styles/code.css';
 	import { links } from '../utils/links';
+	import { page } from '$app/stores';
 
 	import MobileNavigation from '@components/MobileNav.svelte';
 	import Navigation from '@components/Navigation.svelte';
+	import Link from '@components/Link.svelte';
+
+	$: active = $page.url.pathname;
 </script>
 
 <svelte:head>

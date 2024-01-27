@@ -58,4 +58,7 @@
 	</Chart>
 </div>
 <h2>Code</h2>
-<svelte:component this={data.content} />
+
+<div>
+	<svelte:component this={data.content} />
+</div>

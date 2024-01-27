@@ -53,7 +53,7 @@ export const load = (async ({ fetch }) => {
 	});
 
 	return {
-		content: getMarkdownForComponent('divergingbar'),
+		content: await getMarkdownForComponent('divergingbar'),
 		streamed: {
 			data
 		}
