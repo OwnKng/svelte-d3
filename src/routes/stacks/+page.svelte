@@ -1,9 +1,10 @@
 <script lang="ts">
 	import BarStack from '@visualisations/charts/BarStack.svelte';
-	export let data;
 	import { format } from 'd3-format';
 	import Skeleton from '@components/Skeleton.svelte';
 	import Error from '@components/Error.svelte';
+
+	export let data;
 </script>
 
 <h1 class="text-3xl font-bold mb-8">Stacked Bar</h1>

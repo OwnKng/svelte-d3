@@ -2,7 +2,6 @@
 	import type { PageData } from './$types';
 	import Error from '@components/Error.svelte';
 	import Skeleton from '@components/Skeleton.svelte';
-	import DivergingBar from '@visualisations/charts/DivergingBar.svelte';
 	import Button from '@components/Button.svelte';
 	import Difference from '@visualisations/charts/Difference.svelte';
 	import { format } from 'd3-format';

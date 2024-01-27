@@ -6,7 +6,7 @@
 	import { navigating } from '$app/stores';
 
 	let search = '';
-	let input;
+	let input: HTMLInputElement;
 
 	$: filtered = links.map((link) => {
 		return {

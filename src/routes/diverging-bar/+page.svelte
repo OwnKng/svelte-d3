@@ -8,7 +8,6 @@
 	export let data: PageData;
 
 	let selected = 'United States';
-
 	const countries = ['United States', 'China', 'Japan', 'France', 'United Kingdom', 'Germany'];
 </script>
 

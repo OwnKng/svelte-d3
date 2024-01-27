@@ -8,7 +8,7 @@ const labels = {
 };
 
 export const load = (async ({ fetch }) => {
-	const markdown = getMarkdownForComponent('polarstack');
+	const markdown = await getMarkdownForComponent('polarstack');
 
 	const data = Promise.all([
 		fetch('/api', {

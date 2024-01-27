@@ -2,7 +2,7 @@ import type { PageLoad } from './$types';
 import { getMarkdownForComponent } from '@utils/markdown';
 
 export const load = (async ({ fetch }) => {
-	const markdown = getMarkdownForComponent('linechart');
+	const markdown = await getMarkdownForComponent('linechart');
 	return {
 		content: markdown,
 		streamed: {

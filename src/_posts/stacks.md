@@ -1,6 +1,6 @@
 ### Stacks
 
-````svelte
+```svelte
 <script lang="ts">
 	import { stack } from 'd3-shape';
 	import { index, sum, max, rollup, bisector } from 'd3-array';
@@ -168,4 +168,4 @@
 		{/if}
 	</div>
 </div>
-````
+```
