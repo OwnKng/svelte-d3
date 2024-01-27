@@ -1,4 +1,3 @@
-import { preprocessMeltUI, sequence } from '@melt-ui/pp';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.mjs';
@@ -21,12 +20,12 @@ const config = {
 			toggleKeyCombo: 'meta-shift'
 		}
 	},
-	preprocess: sequence([
+	preprocess: [
 		mdsvex(mdsvexConfig),
 		vitePreprocess(),
 		mdsvex({
 			extension: '.md'
 		})
-	])
+	]
 };
 export default config;
