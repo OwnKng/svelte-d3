@@ -6,6 +6,7 @@
 	import { navigating } from '$app/stores';
 
 	let search = '';
+	let input;
 
 	$: filtered = links.map((link) => {
 		return {
@@ -20,14 +21,27 @@
 	$: if ($navigating) search = '';
 </script>
 
+<svelte:window
+	on:keydown={(e) => {
+		if (e.key === '/') {
+			e.preventDefault();
+			input.focus();
+		}
+
+		if (e.key === 'Escape') {
+			input.blur();
+		}
+	}}
+/>
 <nav class="col-span-1 flex flex-col gap-3 hidden md:flex">
 	<label for="search" class="sr-only"> Search </label>
 	<input
+		bind:this={input}
 		id="search"
 		placeholder="Search"
 		autocomplete="off"
 		bind:value={search}
-		class="bg-midnight-50 rounded-sm py-2 px-1 focus:outline-0 mr-12 caret-primary"
+		class="bg-midnight-75 rounded shadow py-2 px-1 focus:outline-0 mr-12 caret-primary"
 	/>
 	{#each filtered as link}
 		<div>

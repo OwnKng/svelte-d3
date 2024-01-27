@@ -13,7 +13,7 @@ export default {
 				primary: 'var(--colors-primary)'
 			},
 			maxWidth: {
-				content: '1000px'
+				content: '1024px'
 			},
 			height: {
 				graph: '500px'
