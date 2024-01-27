@@ -29,7 +29,7 @@ export const links = [
 		]
 	},
 	{
-		title: 'Charts',
+		title: 'Generic Charts',
 		links: [
 			{
 				label: 'Scatter',

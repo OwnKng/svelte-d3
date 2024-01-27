@@ -7,11 +7,8 @@
 	import '../styles/code.css';
 	import { links } from '../utils/links';
 
-	import { page } from '$app/stores';
-	import Link from '@components/Link.svelte';
 	import MobileNavigation from '@components/MobileNav.svelte';
-
-	$: active = $page.url.pathname;
+	import Navigation from '@components/Navigation.svelte';
 </script>
 
 <svelte:head>
@@ -65,20 +62,7 @@
 			</MobileNavigation>
 		</div>
 		<div class="w-full flex flex-col gap-8 md:gap-2 md:grid md:grid-cols-4 px-2 md:px-0">
-			<nav class="col-span-1 flex flex-col gap-3 hidden md:flex">
-				{#each links as link}
-					<div>
-						<p class="font-bold text-primary">{link.title}</p>
-						<ul>
-							{#each link.links as route}
-								<li>
-									<Link to={route.href} active={active === route.href}>{route.label}</Link>
-								</li>
-							{/each}
-						</ul>
-					</div>
-				{/each}
-			</nav>
+			<Navigation />
 			<main class="col-span-3">
 				<slot />
 			</main>
