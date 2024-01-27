@@ -12,9 +12,7 @@
 	const countries = ['United States', 'China', 'Japan', 'France', 'United Kingdom', 'Germany'];
 </script>
 
-
 <h1 class="text-3xl font-bold mb-8">Diverging Bar</h1>
-
 
 {#await data.streamed.data}
 	<div class="w-full h-graph rounded">
@@ -23,7 +21,7 @@
 {:then value}
 	<div class="flex gap-2 flex-wrap mb-2">
 		{#each countries as country}
-			<Button on:click={() => (selected = country)}>{country}</Button>
+			<Button active={selected === country} on:click={() => (selected = country)}>{country}</Button>
 		{/each}
 	</div>
 	<h3 class="text-lg font-bold mb-2">Imports and exports, % of GDP</h3>
@@ -43,5 +41,5 @@
 	<Error />
 {/await}
 
-<h2 class='mt-4'>Code</h2>
+<h2 class="mt-4">Code</h2>
 <svelte:component this={data.content} />
