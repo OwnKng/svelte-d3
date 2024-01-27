@@ -37,6 +37,13 @@ body {
 	font-size: 12px;
 }
 
+.Labels text {
+	stroke: var(--colors-background);
+	paint-order: stroke;
+	font-size: 14px;
+	font-weight: bold;
+}
+
 .Chart text {
 	font-family: 'Source Code Pro', monospace;
 }
