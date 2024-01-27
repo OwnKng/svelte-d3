@@ -1,7 +1,7 @@
 import highlighter from './src/lib/codeHighlighter.mjs';
 
 const config = {
-	extensions: ['.svelte.md'],
+	extensions: ['.svelte.md', '.md', '.svx'],
 	highlight: {
 		highlighter
 	}

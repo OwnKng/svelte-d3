@@ -15,17 +15,11 @@ const config = {
 			'@data': 'src/data'
 		}
 	},
+	preprocess: [mdsvex(mdsvexConfig), vitePreprocess()],
 	vitePlugin: {
 		inspector: {
 			toggleKeyCombo: 'meta-shift'
 		}
-	},
-	preprocess: [
-		mdsvex(mdsvexConfig),
-		vitePreprocess(),
-		mdsvex({
-			extension: '.md'
-		})
-	]
+	}
 };
 export default config;
