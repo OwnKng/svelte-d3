@@ -13,8 +13,8 @@
 		<h1 class="text-5xl font-bold mb-4"><span>&#128075;</span>{' '}Hey there.</h1>
 		<p class="text-lg">
 			Welcome! This is a collection of a few responsive and interactive data visualisations built
-			using <a class="underline text-emerald-400" href="https://d3js.org/">D3</a> and
-			<a class="underline text-emerald-400" href="https://svelte.dev/">Svelte</a>.
+			using <a class="underline text-primary" href="https://d3js.org/">D3</a> and
+			<a class="underline text-primary" href="https://svelte.dev/">Svelte</a>.
 		</p>
 	</div>
 	<div class="flex flex-col gap-4">
@@ -39,13 +39,13 @@
 		<p>
 			These visualisations also use <a
 				href="https://tailwindcss.com/"
-				class="underline text-emerald-400">Tailwind</a
+				class="underline text-primary">Tailwind</a
 			> for some styling.
 		</p>
 
 		<p class="mt-4">
 			Enjoy, <br />
-			<a href="https://ownkng.dev" class="text-emerald-400 text-lg font-bold">Owen King</a>.
+			<a href="https://ownkng.dev" class="text-primary text-lg font-bold">Owen King</a>.
 		</p>
 	</div>
 </div>

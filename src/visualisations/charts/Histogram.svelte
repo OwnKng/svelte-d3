@@ -21,7 +21,6 @@
 	};
 	export let thresholds = 20;
 	export let gradientColors = ['#2dd4bf', '#ccfbf1'];
-
 	const gradientId = crypto.randomUUID();
 
 	let w = 0;

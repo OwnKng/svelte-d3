@@ -26,7 +26,7 @@
 		<header class="mb-12 pt-4 px-2 md:px-0 flex items-start gap-8 justify-between">
 			<div>
 				<a href="/" class="text-3xl text-zinc-50 font-bold">Svelte x D3</a>
-				<p>A collection of data visualisations built with Svelte and D3</p>
+				<p class="text-lg">A collection of data visualisations built with Svelte and D3</p>
 			</div>
 			<div>
 				<a href="https://github.com/OwnKng/svelteviz" class="h-fit">
