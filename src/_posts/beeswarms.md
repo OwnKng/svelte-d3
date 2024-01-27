@@ -1,3 +1,6 @@
+### Beeswarms
+
+```svelte
 <script lang="ts">
 	import { forceSimulation, forceX, forceY, forceCollide } from 'd3-force';
 	import { scaleSqrt, scaleOrdinal, scaleLog, scaleBand } from 'd3-scale';
@@ -141,3 +144,4 @@
 		{/if}
 	{/if}
 </div>
+```

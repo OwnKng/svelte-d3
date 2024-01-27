@@ -76,6 +76,10 @@ export const links = [
 				href: '/polardumbbell'
 			},
 			{
+				label: 'Difference',
+				href: '/difference'
+			},
+			{
 				label: 'Diverging Bar',
 				href: '/diverging-bar'
 			},
@@ -83,6 +87,7 @@ export const links = [
 				label: 'Divering Area',
 				href: '/diverging-area'
 			},
+
 			{
 				label: 'Arrows',
 				href: '/arrows'
@@ -92,16 +97,8 @@ export const links = [
 				href: '/histogram'
 			},
 			{
-				label: 'Beeswarm',
-				href: '/beeswarm'
-			},
-			{
 				label: 'Beeswarms',
 				href: '/beeswarms'
-			},
-			{
-				label: 'Difference',
-				href: '/difference'
 			}
 		]
 	},

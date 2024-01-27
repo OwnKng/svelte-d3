@@ -1,14 +1,15 @@
 import type { PageLoad } from './$types.js';
+import { getMarkdownForComponent } from '@utils/markdown';
 
 export const load = (async ({ fetch }) => {
 	return {
-		data: '',
+		content: getMarkdownForComponent('divergingarea'),
 		streamed: {
 			data: fetch('/api', {
 				method: 'POST',
 				body: JSON.stringify({
-					countryCodes: ['JPN'],
-					code: 'SP.POP.GROW'
+					countryCodes: ['GBR'],
+					code: 'NY.GDP.MKTP.KD.ZG'
 				})
 			}).then((res) => res.json())
 		}

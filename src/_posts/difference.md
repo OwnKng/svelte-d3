@@ -1,3 +1,6 @@
+### Difference
+
+```svelte
 <script lang="ts">
 	import Chart from '@visualisations/primatives/Chart.svelte';
 	import { scaleLinear, scaleOrdinal } from 'd3-scale';
@@ -189,3 +192,4 @@
 		</div>
 	</div>
 </div>
+```

@@ -1,3 +1,6 @@
+### Diverging Area
+
+```svelte
 <script lang="ts">
 	import Chart from '@visualisations/primatives/Chart.svelte';
 	import { scaleLinear } from 'd3-scale';
@@ -142,8 +145,7 @@
 			<circle
 				cx={xScale(getX(tooltip.data))}
 				cy={yScale(getY(tooltip.data))}
-				r={6}
-				stroke="var(--colors-midnight)"
+				r={5}
 				fill={getY(tooltip.data) < threshold ? belowColor : aboveColor}
 			/>
 		{/if}
@@ -166,3 +168,4 @@
 		</Tooltip>
 	{/if}
 </div>
+```
