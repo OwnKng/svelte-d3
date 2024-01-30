@@ -26,10 +26,6 @@ body {
 	stroke: var(--colors-text);
 }
 
-.Grid line {
-	stroke: var(--colors-grid);
-}
-
 .Axis text {
 	fill: var(--colors-text);
 	stroke: var(--colors-background);
