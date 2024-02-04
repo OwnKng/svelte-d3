@@ -67,7 +67,7 @@
 		</div>
 		<div class="w-full flex flex-col gap-8 md:gap-2 md:grid md:grid-cols-4 px-2 md:px-0">
 			<Navigation />
-			<main class="col-span-3">
+			<main class="col-span-3 md:pt-0 pt-8">
 				<slot />
 			</main>
 		</div>
