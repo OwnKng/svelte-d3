@@ -35,7 +35,7 @@
 			}}
 		>
 			<div
-				class="absolute pt-8 overflow-y-auto top-0 left-0 h-full w-5/6 bg-midnight-75 shadow-sm border-r border-midnight-50 pl-2 pb-4 z-50"
+				class="absolute pt-8 pb-40 overflow-y-auto top-0 left-0 h-full w-5/6 bg-midnight-75 shadow-sm border-r border-midnight-50 pl-2 pb-4 z-50"
 			>
 				<slot />
 			</div>

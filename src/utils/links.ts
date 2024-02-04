@@ -77,6 +77,10 @@ export const links = [
 				href: '/polar'
 			},
 			{
+				label: 'Radar',
+				href: '/radar'
+			},
+			{
 				label: 'Polar Stack',
 				href: '/polarstack'
 			},
