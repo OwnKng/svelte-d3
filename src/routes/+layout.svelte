@@ -24,7 +24,7 @@
 
 <div class="w-full h-full min-h-screen bg-background text-zinc-200">
 	<div class="w-full max-w-content mx-auto">
-		<header class="mb-12 pt-4 px-2 md:px-0 flex items-start gap-8 justify-between">
+		<header class="md:mb-12 pt-4 px-2 md:px-0 flex items-start gap-8 justify-between">
 			<div>
 				<a href="/" class="text-3xl text-zinc-50 font-bold">Svelte x D3</a>
 				<p class="text-lg">A collection of data visualisations built with Svelte and D3</p>
