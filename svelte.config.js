@@ -1,8 +1,8 @@
+import { preprocessMeltUI, sequence } from '@melt-ui/pp';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.mjs';
 import adapter from '@sveltejs/adapter-vercel';
-
 /** @type {import('@sveltejs/kit').Config}*/
 const config = {
 	extensions: ['.svelte', '.md'],
@@ -15,7 +15,7 @@ const config = {
 			'@data': 'src/data'
 		}
 	},
-	preprocess: [mdsvex(mdsvexConfig), vitePreprocess()],
+	preprocess: sequence([mdsvex(mdsvexConfig), vitePreprocess(), preprocessMeltUI()]),
 	vitePlugin: {
 		inspector: {
 			toggleKeyCombo: 'meta-shift'

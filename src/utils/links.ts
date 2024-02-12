@@ -5,6 +5,10 @@ export const links = [
 			{
 				label: 'Urban Population',
 				href: '/complex/urban-population'
+			},
+			{
+				label: 'Population by Gender',
+				href: '/complex/gender'
 			}
 		]
 	},
