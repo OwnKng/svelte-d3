@@ -60,16 +60,14 @@
 			{/if}
 		</g>
 	{/each}
-
 	{#if label}
 		<text
 			class="Axis__label"
-			style="transform: translate({(orientation == 'x'
-				? [dimensions.innerWidth / 2, 60]
-				: [-56, dimensions.innerHeight / 2]
-			)
+			text-anchor={orientation == 'y' ? 'middle' : 'middle'}
+			alignment-baseline="after-edge"
+			style="transform: translate({(orientation == 'x' ? [dimensions.innerWidth / 2, 60] : [0, 0])
 				.map((d) => d + 'px')
-				.join(', ')}) {orientation == 'y' ? 'rotate(-90deg)' : ''}"
+				.join(', ')})"
 		>
 			{label}
 		</text>
