@@ -1,5 +1,3 @@
-### Code
-
 ```svelte
 <script lang="ts">
 	import { scaleBand, scaleLinear } from 'd3-scale';
