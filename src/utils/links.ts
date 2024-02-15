@@ -170,6 +170,10 @@ export const links = [
 			{
 				label: 'Voronoi',
 				href: '/voronoi'
+			},
+			{
+				label: 'Compass',
+				href: '/compass'
 			}
 		]
 	}
