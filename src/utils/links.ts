@@ -116,6 +116,10 @@ export const links = [
 			{
 				label: 'Beeswarms',
 				href: '/beeswarms'
+			},
+			{
+				label: 'Slope',
+				href: '/slope'
 			}
 		]
 	},

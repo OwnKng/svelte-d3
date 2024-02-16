@@ -3,10 +3,11 @@
 	import { scaleSqrt, scaleOrdinal, scaleLog } from 'd3-scale';
 	import { extent } from 'd3-array';
 	import { drawNodes } from '../helpers/simulations';
+	import type { D3ForceSimulation } from 'd3-force';
 	import Chart from '@visualisations/primatives/Chart.svelte';
 
 	import TooltipWithBounds from '@visualisations/helpers/TooltipWithBounds.svelte';
-	import type { D3ForceSimulation } from 'd3-force';
+
 	import AxisTop from '@visualisations/helpers/AxisTop.svelte';
 	import LegendOrdinal from '@visualisations/helpers/LegendOrdinal.svelte';
 	import Grid from '@visualisations/helpers/Grid.svelte';
