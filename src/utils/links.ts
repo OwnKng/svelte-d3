@@ -9,6 +9,10 @@ export const links = [
 			{
 				label: 'Population by Gender',
 				href: '/complex/gender'
+			},
+			{
+				label: 'UK population density',
+				href: '/complex/population-density'
 			}
 		]
 	},
@@ -38,6 +42,10 @@ export const links = [
 			{
 				label: 'Arrow',
 				href: '/arrow'
+			},
+			{
+				label: 'Spike',
+				href: '/spike'
 			}
 		]
 	},

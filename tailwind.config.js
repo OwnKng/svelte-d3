@@ -16,7 +16,8 @@ export default {
 				content: '1024px'
 			},
 			height: {
-				graph: '500px'
+				graph: '500px',
+				map: '600px'
 			}
 		}
 	},
