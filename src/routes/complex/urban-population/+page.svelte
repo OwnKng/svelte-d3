@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Button from '@components/Button.svelte';
 	import { population } from './population';
 	import UrbanPopulation from './UrbanPopulation.svelte';
 
@@ -14,9 +13,16 @@
 </div>
 <div class="flex flex-col py-2">
 	<span class="font-bold text-sm">Year</span>
-	<div class="flex gap-2">
+	<div
+		class="flex w-fit rounded-sm shadow divide-x divide-midnight-25 border border-midnight-25 text-sm"
+	>
 		{#each [1980, 2000, 2020] as year}
-			<Button active={selectedYear === year} on:click={() => (selectedYear = year)}>{year}</Button>
+			<button
+				class="{selectedYear === year
+					? 'bg-midnight-25'
+					: 'bg-midnight-75'} px-4 py-1 hover:underline"
+				on:click={() => (selectedYear = year)}>{year}</button
+			>
 		{/each}
 	</div>
 </div>
