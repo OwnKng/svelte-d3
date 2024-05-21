@@ -109,6 +109,10 @@ export const links = [
 				href: '/diverging-bar'
 			},
 			{
+				label: 'Grouped Bar',
+				href: 'groupedbar'
+			},
+			{
 				label: 'Divering Area',
 				href: '/diverging-area'
 			},
